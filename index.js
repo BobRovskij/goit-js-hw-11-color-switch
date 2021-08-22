@@ -23,7 +23,8 @@ const colors = [
   refs.startBtn.addEventListener('click', onStartClick);
   refs.stopBtn.addEventListener('click', onStopClick);
 
-  function onStartClick () {
+function onStartClick() {
+    refs.startBtn.setAttribute('disabled', 'disabled')
     if (btnIsActive) {
       return;
     }; 
@@ -36,7 +37,8 @@ const colors = [
       }, 1000);
   };
 
-  function onStopClick () {
+function onStopClick() {
+    refs.startBtn.removeAttribute('disabled', 'disabled')
     clearInterval(intervalId);
     btnIsActive = false;
-  };
+};
